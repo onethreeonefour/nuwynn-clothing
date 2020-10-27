@@ -1,0 +1,79 @@
+$main-font: "Inter", sans-serif;
+
+.hero-container {
+    display: flex;
+    height: 100vh;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+
+    .text-overlay {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        left: 0;
+        top: 45%;
+        text-align: center;
+        color: white;
+        text-shadow: 0px 4px 10px rgb(0, 0, 0);
+        width: 40%;
+        margin: auto;
+        h1,
+        h3 {
+            font-family: $main-font;
+            text-transform: uppercase;
+            background-color: rgba(0, 0, 0, 0.267);
+            padding: 0.25rem;
+            margin: auto;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+
+        button {
+            padding: 1.5rem;
+            margin: 1rem;
+            width: 17rem;
+            font-family: $main-font;
+            font-weight: bolder;
+            font-size: 1.25rem;
+            outline-style: none;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            transition: 0.4s all ease-in-out;
+            margin-top: 1.25rem;
+        }
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+    .hero-card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        overflow: hidden;
+        margin-top: -2rem;
+        img {
+            display: block;
+            object-position: center;
+            object-fit: fill;
+            width: 650px;
+            height: 800px;
+        }
+        .hero-card-bottom {
+            background-color: #454545;
+            grid-column-start: 1;
+            grid-column-end: span 2;
+            .hero-card-bottom-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                text-align: center;
+                padding: 0.75rem;
+                color: white;
+                font-family: $main-font;
+                font-weight: thin;
+            }
+        }
+    }
+}
