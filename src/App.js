@@ -8,13 +8,15 @@ import { Route, Switch, useLocation } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <div >
       <NavBar />
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/men" component={MenStore} />
-        <Route exact path="/women" component={WomenStore} />
-      </Switch>
+      <div style={{ minHeight: 'calc(100vh - 80px)' }} >
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/men" component={MenStore} />
+          <Route exact path="/women" component={WomenStore} />
+        </Switch>
+      </div>
       <Footer />
     </div>
   );

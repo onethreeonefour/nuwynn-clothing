@@ -7,8 +7,8 @@ function Navbar() {
             <input type="checkbox" id="nav-check" />
             <div class="nav-header">
                 <div class="nav-title">
-                    NUWYNN.
-            </div>
+                    <a href="/">NUWYNN.</a>
+                </div>
             </div>
             <div class="nav-btn">
                 <label for="nav-check">
