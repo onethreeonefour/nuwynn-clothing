@@ -3,22 +3,21 @@ import './Navigation.css';
 
 function Navbar() {
     return (
-        <div class="nav">
+        <div className="nav">
             <input type="checkbox" id="nav-check" />
-            <div class="nav-header">
-                <div class="nav-title">
+            <div className="nav-header">
+                <div className="nav-title">
                     <a href="/">NUWYNN.</a>
                 </div>
             </div>
-            <div class="nav-btn">
-                <label for="nav-check">
+            <div className="nav-btn">
+                <label htmlFor="nav-check">
                     <span></span>
                     <span></span>
                     <span></span>
                 </label>
             </div>
-
-            <div class="nav-links">
+            <div className="nav-links">
                 <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank" rel="noreferrer">Women</a>
                 <a href="https://codepen.io/jo_Geek/" target="_blank" rel="noreferrer">Men</a>
                 <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank" rel="noreferrer">Cart</a>

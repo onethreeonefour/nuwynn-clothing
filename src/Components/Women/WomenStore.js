@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import Banner from '../../Images/Store/banner.jpg'
-import { checkboxes } from './Section/Checkbox';
+import { checkboxes } from '../../Utilities/Checkbox';
+import { productsWomen } from '../../Utilities/Women';
+import { pageVariants, pageDuration } from '../../Utilities/FramerMotion'
+import { motion } from 'framer-motion'
+
 
 const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => {
-    console.log("Checkbox: ", name, checked);
+    //console.log("Checkbox: ", name, checked);
 
     return (
         <input type={type} name={name} checked={checked} onChange={onChange} />
@@ -23,35 +27,46 @@ function WomenStore() {
     };
 
     return (
-        <div className="store-container">
+        <motion.div
+            className="store-container"
+            animate="in"
+            initial="out"
+            exit="out"
+            variants={pageVariants}
+            transition={pageDuration}
+        >
             <div className="banner-container">
                 <div class="centered"><h2>Experience Summer with NUWYNN</h2></div>
                 <img src={Banner} alt="banner" className='banner-image'></img>
             </div>
-            <h1>WOMEN SELECTION</h1>
+            <h1>NUWYNN's Womens Collection</h1>
             <div className="store-grid-container">
-                <div className="store-top-navigation">
-                    <h5>Home</h5>
-                    <h5>Items Found</h5>
-                </div>
                 <div className="store-side-navigation">
-                    <h2>Categories</h2>
+                    <h3>Categories</h3>
                     {checkboxes.map(item => (
                         <label key={item.key}>
                             <Checkbox
                                 name={item.name}
                                 checked={checkedItems[item.name]}
                                 onChange={handleChange}
+                                className="checkbox"
                             />
-                            {item.name}
+                            &emsp;{item.name}
                         </label>
                     ))}
                 </div>
-                <div className="store-cards">
+                {productsWomen.map((item, index) => (
+                    <a href={`product/${item.id}`} key={index} item={item}>
+                        <div className='store-card'>
+                            <img src={item.images[0]} alt="product"></img>
+                            <h3>{item.title}</h3>
+                            <h5>${item.price}</h5>
+                        </div>
+                    </a>
+                ))}
 
-                </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

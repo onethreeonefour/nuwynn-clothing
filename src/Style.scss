@@ -1,5 +1,11 @@
 $main-font: "Inter", sans-serif;
 
+h1,
+h2,
+h3 {
+    font-family: $main-font;
+}
+
 .hero-container {
     display: flex;
     height: 100vh;
@@ -20,7 +26,6 @@ $main-font: "Inter", sans-serif;
         margin: auto;
         h1,
         h3 {
-            font-family: $main-font;
             text-transform: uppercase;
             background-color: rgba(0, 0, 0, 0.267);
             padding: 0.25rem;
@@ -34,7 +39,6 @@ $main-font: "Inter", sans-serif;
             padding: 1.5rem;
             margin: 1rem;
             width: 17rem;
-            font-family: $main-font;
             font-weight: bolder;
             font-size: 1.25rem;
             outline-style: none;
@@ -71,7 +75,7 @@ $main-font: "Inter", sans-serif;
                 text-align: center;
                 padding: 0.75rem;
                 color: white;
-                font-family: $main-font;
+
                 font-weight: thin;
             }
         }
@@ -84,7 +88,7 @@ $main-font: "Inter", sans-serif;
         position: relative;
         text-align: center;
         color: white;
-        font-family: $main-font;
+
         text-shadow: 1px 1px 10px black;
 
         .centered {
@@ -101,21 +105,37 @@ $main-font: "Inter", sans-serif;
         }
     }
     h1 {
-        font-family: $main-font;
         font-weight: thin;
+        padding: 2rem 0 2rem 0;
     }
+
     label {
         display: block;
     }
-
-    .store-top-navigation {
-        display: none;
-    }
     .store-grid-container {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
     }
     .store-side-navigation {
-        border-right: 1px solid black;
+        grid-column: 1 / 2;
+        grid-row: 1 / span 5;
+        border-right: 2px solid rgba(0, 0, 0, 0.089);
     }
+    .store-card {
+        text-align: center;
+        img {
+            height: 350px;
+        }
+        color: black;
+    }
+}
+.product-detail-container {
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,10 +1,19 @@
 import React from 'react'
 import Women from '../../Images/Hero/2.jpg';
 import Men from '../../Images/Hero/3.jpg'
+import { motion } from 'framer-motion'
+import { pageVariants, pageDuration } from '../../Utilities/FramerMotion'
 
 function Landing() {
     return (
-        <div className="hero-container">
+        <motion.div
+            className="hero-container"
+            animate="in"
+            initial="out"
+            exit="out"
+            variants={pageVariants}
+            transition={pageDuration}
+        >
             <div className="hero-card-container">
                 <div className="text-overlay">
                     <h1>This is Nuwynn</h1>
@@ -28,7 +37,7 @@ function Landing() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
