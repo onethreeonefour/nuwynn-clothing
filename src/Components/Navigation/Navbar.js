@@ -18,8 +18,8 @@ function Navbar() {
                 </label>
             </div>
             <div className="nav-links">
-                <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank" rel="noreferrer">Women</a>
-                <a href="https://codepen.io/jo_Geek/" target="_blank" rel="noreferrer">Men</a>
+                <a href="/women" target="_blank" rel="noreferrer">Women</a>
+                <a href="/men" target="_blank" rel="noreferrer">Men</a>
                 <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank" rel="noreferrer">Cart</a>
             </div>
         </div>
