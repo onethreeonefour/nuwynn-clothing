@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { productsMen } from '../../Utilities/Men'
 import { productsWomen } from '../../Utilities/Women'
 import ImageGallery from 'react-image-gallery'
 import { pageVariants, pageDuration } from '../../Utilities/FramerMotion'
 import { motion } from 'framer-motion'
-
+import { GlobalContext } from '../../Context/GlobalState';
 
 function ProductDetail(props) {
-    //console.log(props.match.params.id.slice(-1));
     const [Product, setProduct] = useState([])
     const [Images, setImages] = useState([])
+    const context = useContext(GlobalContext)
 
     useEffect(() => {
         if (props.match.params.id.slice(-1) === "F") {
             let images = [];
             const result = productsWomen.filter(product => product.id === props.match.params.id);
             result[0].images.map(item => {
-
-                images.push({
+                return images.push({
                     original: `../${item}`,
                     thumbnail: `../${item}`
                 })
@@ -28,8 +27,7 @@ function ProductDetail(props) {
             let images = [];
             const result = productsMen.filter(product => product.id === props.match.params.id);
             result[0].images.map(item => {
-
-                images.push({
+                return images.push({
                     original: `../${item}`,
                     thumbnail: `../${item}`
                 })
@@ -39,8 +37,6 @@ function ProductDetail(props) {
 
         }
     }, [])
-    console.log(Product)
-
 
     return (
         <motion.div
@@ -57,6 +53,9 @@ function ProductDetail(props) {
                     <h3>{Product[0].type}</h3>
                     <h4>${Product[0].price}</h4>
                     <p>{Product[0].description}</p>
+                    {Product[0].inCart === false ? <button className="cart-button">Add to Cart</button> :
+                        <button className="cart-button" style={{ backgroundColor: 'orange' }}>Already In Cart</button>}
+
                 </div>
             </div> :
                 <div>

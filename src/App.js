@@ -3,17 +3,19 @@ import NavBar from './Components/Navigation/Navbar';
 import Footer from './Components/Navigation/Footer';
 import WomenStore from './Components/Women/WomenStore';
 import MenStore from './Components/Men/MenStore';
-import ProductDetail from './Components/Product/ProductDetail'
+import ProductDetail from './Components/Product/ProductDetail';
+import CartPage from './Components/Cart/CartPage'
 import './Style.scss';
 import './image-gallery.css';
 import './image-gallery.scss';
 import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion'
+import { GlobalProvider } from './Context/GlobalState';
 
 function App() {
   const location = useLocation();
   return (
-    <div >
+    <GlobalProvider >
       <NavBar />
       <div style={{ minHeight: 'calc(100vh - 80px)' }} >
         <AnimatePresence exitBeforeEnter >
@@ -21,12 +23,13 @@ function App() {
             <Route exact path="/" component={Landing} />
             <Route exact path="/men" component={MenStore} />
             <Route exact path="/women" component={WomenStore} />
-            <Route exact path="/product/:id" component={ProductDetail} item />
+            <Route exact path="/product/:id" component={ProductDetail} />
+            <Route exact path="/cart" component={CartPage} />
           </Switch>
         </AnimatePresence>
       </div>
       <Footer />
-    </div>
+    </GlobalProvider>
   );
 }
 

@@ -18,9 +18,9 @@ function Navbar() {
                 </label>
             </div>
             <div className="nav-links">
-                <a href="/women" target="_blank" rel="noreferrer">Women</a>
-                <a href="/men" target="_blank" rel="noreferrer">Men</a>
-                <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank" rel="noreferrer">Cart</a>
+                <a href="/women" >Women</a>
+                <a href="/men" >Men</a>
+                <a href="/cart" >Cart</a>
             </div>
         </div>
     )
