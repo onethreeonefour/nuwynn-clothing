@@ -1,6 +1,4 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { productsMen } from '../../Utilities/Men'
-import { productsWomen } from '../../Utilities/Women'
 import ImageGallery from 'react-image-gallery'
 import { pageVariants, pageDuration } from '../../Utilities/FramerMotion'
 import { motion } from 'framer-motion'
@@ -14,7 +12,7 @@ function ProductDetail(props) {
     useEffect(() => {
         if (props.match.params.id.slice(-1) === "F") {
             let images = [];
-            const result = productsWomen.filter(product => product.id === props.match.params.id);
+            const result = context.products[1].filter(product => product.id === props.match.params.id);
             result[0].images.map(item => {
                 return images.push({
                     original: `../${item}`,
@@ -25,7 +23,7 @@ function ProductDetail(props) {
             setProduct(result)
         } else {
             let images = [];
-            const result = productsMen.filter(product => product.id === props.match.params.id);
+            const result = context.products[0].filter(product => product.id === props.match.params.id);
             result[0].images.map(item => {
                 return images.push({
                     original: `../${item}`,
@@ -53,7 +51,7 @@ function ProductDetail(props) {
                     <h3>{Product[0].type}</h3>
                     <h4>${Product[0].price}</h4>
                     <p>{Product[0].description}</p>
-                    {Product[0].inCart === false ? <button className="cart-button">Add to Cart</button> :
+                    {Product[0].inCart === false ? <button className="cart-button" onClick={() => context.addToCart(Product[0].id)}>Add to Cart</button> :
                         <button className="cart-button" style={{ backgroundColor: 'orange' }}>Already In Cart</button>}
 
                 </div>
