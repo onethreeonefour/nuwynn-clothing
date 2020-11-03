@@ -10,12 +10,12 @@ import './image-gallery.css';
 import './image-gallery.scss';
 import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion'
-import { GlobalProvider } from './Context/GlobalState';
+
 
 function App() {
   const location = useLocation();
   return (
-    <GlobalProvider >
+    <div >
       <NavBar />
       <div style={{ minHeight: 'calc(100vh - 80px)' }} >
         <AnimatePresence exitBeforeEnter >
@@ -29,7 +29,7 @@ function App() {
         </AnimatePresence>
       </div>
       <Footer />
-    </GlobalProvider>
+    </div>
   );
 }
 

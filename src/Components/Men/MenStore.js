@@ -3,6 +3,7 @@ import Banner from '../../Images/Store/banner.jpg'
 import { pageVariants, pageDuration } from '../../Utilities/FramerMotion'
 import { motion } from 'framer-motion'
 import { GlobalContext } from '../../Context/GlobalState';
+import { Link } from 'react-router-dom';
 
 function MenStore() {
     const context = useContext(GlobalContext)
@@ -23,13 +24,13 @@ function MenStore() {
             <h1 style={{ textAlign: 'center' }}>NUWYNN's Mens Collection</h1>
             <div className="store-grid-container">
                 {context.products[0].map((item, index) => (
-                    <a href={`product/${item.id}`} key={index}>
+                    <Link to={`product/${item.id}`} key={index}>
                         <div className='store-card'>
                             <img src={item.images[0]} alt="product"></img>
                             <h3>{item.title}</h3>
                             <h5>${item.price}</h5>
                         </div>
-                    </a>
+                    </Link>
                 ))}
 
             </div>

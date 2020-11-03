@@ -3,6 +3,8 @@ import Women from '../../Images/Hero/2.jpg';
 import Men from '../../Images/Hero/3.jpg'
 import { motion } from 'framer-motion'
 import { pageVariants, pageDuration } from '../../Utilities/FramerMotion'
+import { Link } from 'react-router-dom';
+
 
 function Landing() {
     return (
@@ -19,8 +21,8 @@ function Landing() {
                     <h1>This is Nuwynn</h1>
                     <h3>Modern. Design. Comfort.</h3>
                     <div>
-                        <a href="/women"><button>Shop Women</button></a>
-                        <a href="/men"><button>Shop Men</button></a>
+                        <Link to="/women"><button>Shop Women</button></Link>
+                        <Link to="/men"><button>Shop Men</button></Link>
                     </div>
                 </div>
                 <div>

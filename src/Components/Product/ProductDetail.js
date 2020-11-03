@@ -52,7 +52,7 @@ function ProductDetail(props) {
                     <h4>${Product[0].price}</h4>
                     <p>{Product[0].description}</p>
                     {Product[0].inCart === false ? <button className="cart-button" onClick={() => context.addToCart(Product[0].id)}>Add to Cart</button> :
-                        <button className="cart-button" style={{ backgroundColor: 'orange' }}>Already In Cart</button>}
+                        <button className="cart-button" style={{ backgroundColor: 'orange' }}>Added to Cart</button>}
 
                 </div>
             </div> :

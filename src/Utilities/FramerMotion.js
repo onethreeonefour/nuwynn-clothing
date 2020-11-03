@@ -10,5 +10,5 @@ export const pageVariants = {
 };
 
 export const pageDuration = {
-    duration: 0.3
+    duration: 0.2
 };
