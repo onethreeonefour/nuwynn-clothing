@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Navigation.css';
 import { Link } from 'react-router-dom';
+import { GlobalContext } from '../../Context/GlobalState';
 function Navbar() {
+
+    const context = useContext(GlobalContext)
+
     return (
         <div className="nav">
             <input type="checkbox" id="nav-check" />
@@ -20,7 +24,7 @@ function Navbar() {
             <div className="nav-links">
                 <Link to="/women" >Women</Link>
                 <Link to="/men" >Men</Link>
-                <Link to="/cart" >Cart</Link>
+                <Link to="/cart" >{context.cartTotal <= 0 ? `Cart $0.00` : `Cart $${context.cartTotal}`}</Link>
             </div>
         </div>
     )
