@@ -24,7 +24,7 @@ function Navbar() {
             <div className="nav-links">
                 <Link to="/women" >Women</Link>
                 <Link to="/men" >Men</Link>
-                <Link to="/cart" >{context.cartTotal <= 0 ? `Cart $0.00` : `Cart $${context.cartTotal}`}</Link>
+                <Link to="/cart" >{context.cartTotal <= 0 ? `Cart $0.00` : `Cart $${context.cartTotal.toFixed(2)}`}</Link>
             </div>
         </div>
     )
